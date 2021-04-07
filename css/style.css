@@ -95,6 +95,15 @@ h2 {
   font-size: 1rem;
   color: #E83015;
 }
+h2 img {
+  width: 50%;
+}
+@media screen and (min-width: 769px) {
+  h2 img {
+    width: 20%;
+    margin-bottom: 5px;
+  }
+}
 /*各コンテナh2終わり*/
 /*news*/
 .news-contents {
@@ -189,9 +198,14 @@ h2 {
   font-size: 1rem;
   text-indent: 0;
   padding-left: 10px;
-  margin-bottom: 20px;
   border-bottom: none;
   border-left: 10px solid #E83015;
+}
+.news-main time {
+  font-size: 14px;
+}
+.news-main p {
+  margin-top: 10px;
 }
 .news-main img {
   max-width: 80%;
@@ -255,14 +269,17 @@ input[type="button"]:hover {
 .teams .contents-box p:last-child {
   margin-bottom: 0;
 }
-.teams img {
-  width: 100%;
-}
 .team-top {
   width: 100%;
   height: 80px;
   background: #ccc;
   margin-bottom: 20px;
+}
+.team-1 .team-top {
+  background: center/cover no-repeat url("../img/teams/team1/team1-banner.jpg");
+}
+.team-2 .team-top {
+  background: center/cover no-repeat url("../img/teams/team2/team2-banner.jpg");
 }
 .team-m ul {
   list-style: none;
@@ -293,6 +310,14 @@ input[type="button"]:hover {
   font-size: 20px;
   vertical-align: middle;
 }
+.m-sns a {
+  display: inline;
+  padding: 5px;
+}
+.m-sns a:hover {
+  background: #000;
+  color: #fff;
+}
 @media screen and (min-width: 769px) {
   #teams .teams {
     margin-top: 0;
@@ -307,11 +332,11 @@ input[type="button"]:hover {
   width: 60%;
   margin: 50px auto;
 }
-.partner img {
-  width: 100%;
-}
 .partner .contents-box {
   height: auto;
+}
+.partner h2 img {
+  width: 60%;
 }
 .partner a {
   transition: .3s all;
@@ -325,6 +350,9 @@ input[type="button"]:hover {
   .partner {
     padding-top: 50px;
   }
+  .partner h2 img {
+    width: 30%;
+  }
 }
 /*partner終わり*/
 /*about*/
@@ -335,9 +363,6 @@ input[type="button"]:hover {
 }
 .about section h3, .about section p {
   margin: 20px auto;
-}
-.about img {
-  margin: 0 auto;
 }
 .about a {
   width: 80%;
@@ -370,6 +395,7 @@ input[type="button"]:hover {
   overflow: hidden;
   padding-bottom: 75%;
   position: relative;
+  border: 1px solid #E83015;
 }
 .gmap iframe {
   position: absolute;
@@ -417,6 +443,7 @@ input[type="button"]:hover {
   }
   #contact .contact {
     padding-top: 50px;
+    margin-top: 0;
   }
 }
 /*contactボタン終わり*/
@@ -424,6 +451,9 @@ input[type="button"]:hover {
 .contact > p {
   width: 80%;
   margin: 0 auto 20px;
+}
+.contact h2 img {
+  width: 60%;
 }
 .contact span {
   color: #E83015;
@@ -458,15 +488,29 @@ input[type="reset"], input[type="submit"] {
   border: 0;
   outline: none;
   color: #fff;
-}
-input[type="reset"]:hover, input[type="submit"]:hover {
-  cursor: pointer;
+  transition: .3s all;
 }
 input[type="reset"] {
   background: #7DB9DE;
 }
 input[type="submit"] {
   background: #E83015;
+}
+@media screen and (min-width: 769px) {
+  #contact h2 img {
+    width: 30%;
+  }
+  input[type="reset"]:hover, input[type="submit"]:hover {
+    cursor: pointer;
+  }
+  input[type="reset"]:hover {
+    background: #fff;
+    color: #7DB9DE;
+  }
+  input[type="submit"]:hover {
+    background: #fff;
+    color: #E83015;
+  }
 }
 /*footer*/
 footer {
@@ -513,15 +557,31 @@ footer p, footer a {
   }
   .f-nav a {
     margin-bottom: 10px;
-    border-left: 1px solid;
-    border-right: 1px solid;
     padding: 0 10px;
     transition: .3s all;
+    position: relative;
+    z-index: 2;
   }
   .f-nav a:hover {
     color: #fff;
-    background: #E83015;
     transition: .3s all;
+  }
+  .f-nav a:after {
+    width: 0%;
+    height: 100%;
+    background-color: #E83015;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.3s;
+    z-index: -1;
+  }
+  .f-nav li:last-child a:after {
+    background: #7DB9DE;
+  }
+  .f-nav a:hover:after {
+    width: 100%;
   }
 }
 /*footer終わり*/

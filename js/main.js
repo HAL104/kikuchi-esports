@@ -50,14 +50,14 @@ $(window).on('load', function () {
   function hashMove(trg) {
     var position = $(trg).offset().top;
     if ($('body').hasClass('admin-bar')) {
-      position = position - 20;
+      position = position - 10;
     } else {
       position = position - 10;
     }
     if ($('body').width() <= 980) {
-      position = position - 50; //見出しの文字が切れるのを防ぐ
+      position = position - 10; //見出しの文字が切れるのを防ぐ
     } else {
-      position = position - 150; //見出しの文字が切れるのを防ぐ
+      position = position - 10; //見出しの文字が切れるのを防ぐ
     }
     $('body,html').animate({
       scrollTop: position
